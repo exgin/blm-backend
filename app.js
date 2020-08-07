@@ -1,13 +1,16 @@
 /* BLM express */
 const express = require('express');
 const ExpressError = require('./expressError');
+const cors = require('cors');
 
 const app = express();
 
-const apiRoute = require('./routes/news');
-
+/* Middleware */
 app.use(express.json());
+app.use(cors());
 
+/* Routes */
+const apiRoute = require('./routes/news');
 app.use('/api', apiRoute);
 
 /* 404 Not Found  */
