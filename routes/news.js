@@ -8,7 +8,7 @@ const { newsapi } = require('../config');
 // look at Node.js client library docs
 router.get('/', async function (req, res, next) {
   try {
-    const data = await newsapi.v2.everything({ totalResults: 10, q: 'blm', language: 'en', sortBy: 'relevancy' });
+    const data = await newsapi.v2.everything({ pageSize: 10, q: 'blm', language: 'en', sortBy: 'relevancy' });
     return res.json(data);
   } catch (error) {
     return next(error);
