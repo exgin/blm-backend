@@ -4,8 +4,6 @@ const router = new express.Router();
 const { newsapi } = require('../config');
 
 /* basic fetch for news */
-
-// look at Node.js client library docs
 router.get('/', async function (req, res, next) {
   try {
     const data = await newsapi.v2.everything({ pageSize: 10, q: 'blm', language: 'en', sortBy: 'relevancy' });

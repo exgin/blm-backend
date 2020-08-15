@@ -10,8 +10,10 @@ app.use(express.json());
 app.use(cors());
 
 /* Routes */
-const apiRoute = require('./routes/news');
-app.use('/api', apiRoute);
+const routeNews = require('./routes/news');
+const routeSurvey = require('./routes/survey');
+app.use('/api', routeNews);
+app.use('/survey', routeSurvey);
 
 /* 404 Not Found  */
 app.use((req, res, next) => {
